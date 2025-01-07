@@ -2,6 +2,35 @@ console.log("Register working")
 
 const usernameField=document.querySelector('#usernameField');
 const feedbackArea=document.querySelector('.invalid_feedback');
+const emailField=document.querySelector('#emailField');
+const emailfeedbackArea=document.querySelector('.invalid_email_feedback')
+
+emailField.addEventListener('keyup', (e) =>{
+
+    const emailVal=e.target.value;
+
+    console.log('email',emailVal)
+
+    emailField.classList.remove('is-invalid');
+    emailfeedbackArea.style.display="none";
+
+    if(emailVal.length>0){
+        fetch("/authentication/validate-email",{
+            body: JSON.stringify({ email:emailVal }),
+            method: "POST",
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            console.log("data",data);
+            if(data.email_error){
+                emailField.classList.add('is-invalid');
+                emailfeedbackArea.style.display="block";
+                emailfeedbackArea.innerHTML= '<p> ' + data.email_error + '</p>';
+            }
+        });
+    }
+
+})
 
 usernameField.addEventListener('keyup',(e)=> {
 
