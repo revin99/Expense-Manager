@@ -18,8 +18,12 @@
                 <h4>Register for free account</h4>
             </div>
             
-            <form action="" method="post">
+           
 
+            {% include 'partials/_messages.html' %}
+            
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
                 <div class="form-group">
                     <input 
                     type="text" 
@@ -53,7 +57,7 @@
                     id="passwordField" 
                     class="form-control form-control-sm" 
                     />
-                    <small style="float:right;">SHOW </small>
+                    <small class="showPasswordToggle" style="float:right;">SHOW </small>
                 </div>
 
                 <input type="submit" value="Register" style="position: absolute; left:40%;" class="btn btn-block btn-primary"/>

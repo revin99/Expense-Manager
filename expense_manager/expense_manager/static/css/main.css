@@ -74,3 +74,11 @@
   .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
   }
+
+  .showPasswordToggle{
+    cursor: pointer;
+  }
+
+  .showPasswordToggle:hover{
+    transform: scale(1.3);
+  }
