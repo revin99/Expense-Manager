@@ -18,12 +18,12 @@
                 <h4>Register for free account</h4>
             </div>
             
-            {% csrf_token %}
+           
 
             {% include 'partials/_messages.html' %}
             
-            <form action="" method="post">
-
+            <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
                 <div class="form-group">
                     <input 
                     type="text" 
