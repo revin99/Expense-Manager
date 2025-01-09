@@ -30,7 +30,8 @@
                     name="username"
                     placeholder="username" 
                     id="usernameField" 
-                    class="form-control form-control-sm" 
+                    class="form-control form-control-sm"
+                    value="{{fieldValues.email}}"
                     />
                 </div>
                 <div class="invalid_feedback" style="display:none">
@@ -44,6 +45,7 @@
                     placeholder="Email"
                     id="emailField"
                     class="form-control form-control-sm" 
+                    value="{{fieldValues.email}}"
                     />
                 </div>
                 <div class="invalid_email_feedback" style="display:none">
@@ -60,7 +62,7 @@
                     <small class="showPasswordToggle" style="float:right;">SHOW </small>
                 </div>
 
-                <input type="submit" value="Register" style="position: absolute; left:40%;" class="btn btn-block btn-primary"/>
+                <input type="submit" value="Register" style="position: absolute; left:40%;" class="btn btn-block btn-primary submit-btn"/>
             
             </form>
         </div>
