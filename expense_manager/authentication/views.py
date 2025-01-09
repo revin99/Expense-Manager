@@ -52,7 +52,7 @@ class RegistrationView(View):
 
                 if len(password) < 6:
                     messages.error("Password too short")
-                    return render(request,'authentication/register.html')
+                    return render(request,'authentication/register.html',context)
                 
                 user = User.objects.create_user(username=username,email=email)
                 user.set_password(password)
